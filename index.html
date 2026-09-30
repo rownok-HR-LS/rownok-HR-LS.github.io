@@ -16,10 +16,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Animations only start hidden when JS runs and the visitor hasn't asked for reduced motion.
+    // If script.js never finishes loading, show everything after 3 seconds anyway.
+    (function (h) {
+      h.classList.add("js");
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) h.classList.add("motion");
+      setTimeout(function () { if (!h.classList.contains("ready")) h.classList.remove("motion"); }, 3000);
+    })(document.documentElement);
+  </script>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="cursor" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="wrap bar">
@@ -34,57 +45,65 @@
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
+        <span class="nav-ind" aria-hidden="true"></span>
       </nav>
-      <a class="btn btn-small" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
+      <a class="btn btn-small magnetic" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
     </div>
+    <div class="read-progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
+      <div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">HR Manager &amp; Project Manager · LofiStack</p>
-          <h1>I build clear, fair processes that help people and projects do their best work.</h1>
-          <p class="lede">I run HR for a 30-person team and manage delivery for around 20 client accounts at the same time, with one goal on both sides: clear rules, real support and accountability.</p>
-          <div class="actions">
-            <a class="btn" href="Rownok-Rahman-CV.pdf" download>
+          <p class="eyebrow reveal" style="--d: 0ms">HR Manager &amp; Project Manager · LofiStack</p>
+          <h1 data-split>I build clear, fair processes that help people and projects do their best work.</h1>
+          <p class="lede reveal" style="--d: 650ms">I run HR for a 30-person team and manage delivery for around 20 client accounts at the same time, with one goal on both sides: clear rules, real support and accountability.</p>
+          <div class="actions reveal" style="--d: 800ms">
+            <a class="btn magnetic" href="Rownok-Rahman-CV.pdf" download>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
               Download CV
             </a>
-            <a class="btn btn-ghost" href="mailto:rownokrah26@gmail.com">Email me</a>
+            <a class="btn btn-ghost magnetic" href="mailto:rownokrah26@gmail.com">Email me</a>
           </div>
-          <p class="where">
+          <p class="where reveal" style="--d: 950ms">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
             Chittagong, Bangladesh
           </p>
         </div>
-        <figure class="portrait">
-          <picture>
+        <figure class="portrait reveal-portrait" data-parallax>
+          <div class="arch" data-depth="-10"></div>
+          <picture class="photo" data-depth="12">
             <source srcset="images/rownok.webp" type="image/webp">
             <img src="images/rownok.png" width="720" height="900" alt="Portrait of Rownok Rahman in a dark suit and plum tie">
           </picture>
+          <span class="float f1" data-depth="28"><span><i class="dot"></i>HR Manager</span></span>
+          <span class="float f2" data-depth="-22"><span><i class="dot"></i>Project Manager</span></span>
+          <span class="float f3" data-depth="36"><span>MBA · HRM</span></span>
         </figure>
       </div>
 
       <div class="wrap">
-        <dl class="stats">
-          <div><dt>People supported</dt><dd>30</dd></div>
-          <div><dt>Client accounts at a time</dt><dd>~20</dd></div>
-          <div><dt>Hires, end to end</dt><dd>7</dd></div>
-          <div><dt>Promotions in two years</dt><dd>2</dd></div>
+        <dl class="stats reveal" style="--d: 1100ms">
+          <div><dt>People supported</dt><dd data-count="30">30</dd></div>
+          <div><dt>Client accounts at a time</dt><dd data-count="20" data-prefix="~">~20</dd></div>
+          <div><dt>Hires, end to end</dt><dd data-count="7">7</dd></div>
+          <div><dt>Promotions in two years</dt><dd data-count="2">2</dd></div>
         </dl>
       </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About"><span></span></a>
     </section>
 
     <!-- About -->
     <section class="section" id="about" aria-labelledby="about-h">
       <div class="wrap two-col">
         <div>
-          <p class="kicker">About</p>
-          <h2 id="about-h">People and delivery, looked after together.</h2>
+          <p class="kicker reveal">About</p>
+          <h2 id="about-h" data-split>People and delivery, looked after together.</h2>
         </div>
-        <div class="prose">
+        <div class="prose" data-stagger>
           <p>I'm the HR Manager and Project Manager at LofiStack, where I look after both the people and the delivery. On the people side, I run the everyday employee processes: communication, attendance, performance and training. On the operations side, I coordinate resources and day-to-day work so teams stay aligned and delivery stays on track.</p>
           <p>I joined LofiStack in 2024 as an IT Officer, moved into project management, and now lead HR alongside it. Coming up through the work itself gives me a practical view of how things actually get done, and of what people need to do them well.</p>
           <p>What I care about most is clear, fair processes, real support for employees, and accountability that helps both the team and the company grow.</p>
@@ -101,11 +120,11 @@
     <!-- Highlights -->
     <section class="section tinted" id="highlights" aria-labelledby="hl-h">
       <div class="wrap">
-        <p class="kicker">Highlights</p>
-        <h2 id="hl-h">Work I'm proud of.</h2>
+        <p class="kicker reveal">Highlights</p>
+        <h2 id="hl-h" data-split>Work I'm proud of.</h2>
 
-        <div class="hl-grid">
-          <article class="card feature">
+        <div class="hl-grid" data-stagger>
+          <article class="card feature tilt">
             <div class="card-top">
               <span class="tag">HR · Launched Jan 2026</span>
               <h3>MEPPS: Monthly Employee Performance Point System</h3>
@@ -118,6 +137,38 @@
               <li><span class="n">3</span><strong>Apply</strong><span>Finance turns points into deductions and rewards</span></li>
             </ol>
 
+            <div class="sim" aria-labelledby="sim-h">
+              <div class="sim-head">
+                <strong id="sim-h">Try it: one employee's month</strong>
+                <span>Example points to show the idea, not the real MEPPS rulebook.</span>
+              </div>
+              <div class="sim-body">
+                <div class="sim-events" role="group" aria-label="Events this month">
+                  <button type="button" class="ev pos" data-points="5" aria-pressed="false">Perfect attendance <b>+5</b></button>
+                  <button type="button" class="ev pos" data-points="3" aria-pressed="true">Helped a teammate <b>+3</b></button>
+                  <button type="button" class="ev pos" data-points="2" aria-pressed="false">Finished training <b>+2</b></button>
+                  <button type="button" class="ev neg" data-points="-2" aria-pressed="true">Late arrival <b>−2</b></button>
+                  <button type="button" class="ev neg" data-points="-3" aria-pressed="false">Missed a deadline <b>−3</b></button>
+                  <button type="button" class="ev neg" data-points="-5" aria-pressed="false">Broke a workplace rule <b>−5</b></button>
+                </div>
+                <div class="gauge" aria-live="polite">
+                  <svg viewBox="0 0 200 116" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="g-arc" x1="0" x2="1">
+                        <stop offset="0" stop-color="var(--neg)"/>
+                        <stop offset="0.5" stop-color="var(--border)"/>
+                        <stop offset="1" stop-color="var(--pos)"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M16 104a84 84 0 0 1 168 0" fill="none" stroke="url(#g-arc)" stroke-width="12" stroke-linecap="round"/>
+                    <g class="needle"><line x1="100" y1="104" x2="100" y2="34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="104" r="8" fill="currentColor"/></g>
+                  </svg>
+                  <p class="score"><span class="score-n">+1</span> <small>points</small></p>
+                  <p class="verdict">Reward: finance adds it to this month's pay.</p>
+                </div>
+              </div>
+            </div>
+
             <p class="outcome-label">Since launch</p>
             <ul class="outcomes">
               <li>Fewer disputes</li>
@@ -126,24 +177,33 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card tilt">
             <div class="card-top">
               <span class="tag">HR systems</span>
               <h3>LofiHRM</h3>
             </div>
             <p>I helped build and shape LofiHRM, LofiStack's in-house HR software, and I use it every day to run HR for the team.</p>
+            <div class="mini-ui" aria-hidden="true">
+              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 72%"></span><span class="pill ok">Present</span></div>
+              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 54%"></span><span class="pill warn">Late</span></div>
+              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 86%"></span><span class="pill ok">Present</span></div>
+              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 40%"></span><span class="pill leave">Leave</span></div>
+            </div>
           </article>
 
-          <article class="card">
+          <article class="card tilt">
             <div class="card-top">
               <span class="tag">Career</span>
               <h3>Two promotions in two years</h3>
             </div>
             <p>From IT Officer in 2024 to Project Manager in 2025, then HR Manager in 2026 while keeping the project management role.</p>
+            <div class="stairs" aria-hidden="true">
+              <span style="--h: 34%">2024</span><span style="--h: 62%">2025</span><span style="--h: 92%">2026</span>
+            </div>
           </article>
         </div>
 
-        <article class="case" aria-labelledby="case-h">
+        <article class="case reveal" aria-labelledby="case-h">
           <header class="case-head">
             <div>
               <span class="tag">Case study · Client project</span>
@@ -155,25 +215,43 @@
             </dl>
           </header>
 
-          <ul class="industries" aria-label="Industries covered">
-            <li>Life insurance</li><li>Credit</li><li>Event management</li><li>Spa / medical</li><li>Life &amp; health</li>
-          </ul>
-
           <div class="case-body">
             <div>
               <h4>The challenge</h4>
-              <p>ARC Affiliates runs sub-accounts across five industries. Each business had its own sales process, lead sources and follow-up needs, but every team needed one place to capture, organize and track its leads and opportunities.</p>
+              <p>ARC Affiliates runs sub-accounts across five industries: life insurance, credit, event management, spa/medical services, and life &amp; health. Each business had its own sales process, lead sources and follow-up needs, but every team needed one place to capture, organize and track its leads and opportunities.</p>
               <h4>My part</h4>
               <p>I was the Project Manager and the client's main point of contact. I planned and coordinated delivery across every sub-account and handled all client communication.</p>
             </div>
             <div>
               <h4>What we delivered</h4>
-              <ul class="ticks">
-                <li><strong>Life insurance &amp; credit:</strong> CRM workflows for lead management, follow-ups and opportunity tracking. We also mapped the challenges of maintaining these systems and costed the ongoing requirements, so the client could plan ahead.</li>
-                <li><strong>Event management:</strong> external systems integrated with the CRM, so leads and opportunities sync automatically.</li>
-                <li><strong>Spa / medical and life &amp; health:</strong> workflows tailored to each business's own process.</li>
-                <li><strong>Across all accounts:</strong> pipelines and automations that follow each lead from first contact to the right sales or service stage.</li>
-              </ul>
+              <div class="tabs" role="tablist" aria-label="Sub-accounts">
+                <button type="button" role="tab" id="t-1" aria-controls="p-1" aria-selected="true">Life insurance &amp; credit</button>
+                <button type="button" role="tab" id="t-2" aria-controls="p-2" aria-selected="false" tabindex="-1">Event management</button>
+                <button type="button" role="tab" id="t-3" aria-controls="p-3" aria-selected="false" tabindex="-1">Spa / medical, life &amp; health</button>
+                <span class="tab-ind" aria-hidden="true"></span>
+              </div>
+              <div class="panels">
+                <div class="panel" role="tabpanel" id="p-1" aria-labelledby="t-1">
+                  <ul class="ticks">
+                    <li>CRM workflows for lead management, follow-ups and opportunity tracking.</li>
+                    <li>Optimized day-to-day client operations inside the CRM.</li>
+                    <li>Mapped the challenges of maintaining these systems and costed the ongoing requirements, so the client could plan ahead.</li>
+                  </ul>
+                </div>
+                <div class="panel" role="tabpanel" id="p-2" aria-labelledby="t-2" hidden>
+                  <ul class="ticks">
+                    <li>Connected external systems to the CRM.</li>
+                    <li>Leads and opportunities now sync automatically, so the team tracks everything in one place.</li>
+                  </ul>
+                </div>
+                <div class="panel" role="tabpanel" id="p-3" aria-labelledby="t-3" hidden>
+                  <ul class="ticks">
+                    <li>CRM workflows developed for spa/medical agencies and life &amp; health clients.</li>
+                    <li>Each workflow adapted to that business's specific requirements.</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="across"><strong>Across all accounts:</strong> pipelines and automations that follow each lead from first contact to the right sales or service stage.</p>
             </div>
           </div>
 
@@ -185,11 +263,11 @@
     <!-- Experience -->
     <section class="section" id="experience" aria-labelledby="exp-h">
       <div class="wrap">
-        <p class="kicker">Experience</p>
-        <h2 id="exp-h">Where I've worked.</h2>
+        <p class="kicker reveal">Experience</p>
+        <h2 id="exp-h" data-split>Where I've worked.</h2>
 
         <ol class="timeline">
-          <li class="job current">
+          <li class="job current reveal">
             <div class="when">Jan 2026 – Present</div>
             <div class="what">
               <h3>HR Manager &amp; Project Manager</h3>
@@ -203,7 +281,7 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job reveal">
             <div class="when">Jan 2025 – Dec 2025</div>
             <div class="what">
               <h3>Project Manager</h3>
@@ -215,7 +293,7 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job reveal">
             <div class="when">Jan 2024 – Dec 2024</div>
             <div class="what">
               <h3>IT Officer</h3>
@@ -228,7 +306,7 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job reveal">
             <div class="when">May 2023 – Jul 2023</div>
             <div class="what">
               <h3>Intern, Personnel Department</h3>
@@ -245,11 +323,11 @@
     <!-- Skills -->
     <section class="section tinted" id="skills" aria-labelledby="skills-h">
       <div class="wrap">
-        <p class="kicker">Skills</p>
-        <h2 id="skills-h">What I bring.</h2>
+        <p class="kicker reveal">Skills</p>
+        <h2 id="skills-h" data-split>What I bring.</h2>
 
-        <div class="skill-grid">
-          <div class="skill-col">
+        <div class="skill-grid" data-stagger>
+          <div class="skill-col tilt">
             <h3>HR</h3>
             <ul>
               <li>Recruitment &amp; onboarding</li>
@@ -263,7 +341,7 @@
               <li>Internal communication</li>
             </ul>
           </div>
-          <div class="skill-col">
+          <div class="skill-col tilt">
             <h3>Project &amp; operations</h3>
             <ul>
               <li>Client management &amp; communication</li>
@@ -274,7 +352,7 @@
               <li>Systems integration</li>
             </ul>
           </div>
-          <div class="skill-col">
+          <div class="skill-col tilt">
             <h3>Technical</h3>
             <ul>
               <li>IT support &amp; systems setup</li>
@@ -282,18 +360,25 @@
               <li>CRM building</li>
             </ul>
             <h3 class="sub">Languages</h3>
-            <ul>
-              <li>Bangla <span class="lvl">Fluent</span></li>
-              <li>English <span class="lvl">Professional</span></li>
+            <ul class="langs">
+              <li>Bangla <span class="lvl">Fluent</span><span class="meter" style="--v: 100%"></span></li>
+              <li>English <span class="lvl">Professional</span><span class="meter" style="--v: 80%"></span></li>
             </ul>
           </div>
         </div>
 
-        <div class="tools">
+        <div class="tools reveal">
           <h3>Tools I use</h3>
-          <ul class="chips">
-            <li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li>
-          </ul>
+          <div class="marquee">
+            <div class="marquee-track">
+              <ul class="chips">
+                <li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li>
+              </ul>
+              <ul class="chips" aria-hidden="true">
+                <li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -301,16 +386,16 @@
     <!-- Education -->
     <section class="section" id="education" aria-labelledby="edu-h">
       <div class="wrap">
-        <p class="kicker">Education</p>
-        <h2 id="edu-h">Trained in HR, twice over.</h2>
-        <div class="edu-grid">
-          <article class="edu">
-            <span class="edu-yr">2023</span>
+        <p class="kicker reveal">Education</p>
+        <h2 id="edu-h" data-split>Trained in HR, twice over.</h2>
+        <div class="edu-grid" data-stagger>
+          <article class="edu tilt">
+            <span class="edu-yr" data-count="2023" data-plain>2023</span>
             <h3>MBA in Human Resource Management</h3>
             <p>Port City International University</p>
           </article>
-          <article class="edu">
-            <span class="edu-yr">2022</span>
+          <article class="edu tilt">
+            <span class="edu-yr" data-count="2022" data-plain>2022</span>
             <h3>BBA in Human Resource Management</h3>
             <p>Port City International University</p>
             <p class="note">Began at East West University, then transferred credits to Port City International University.</p>
@@ -321,17 +406,18 @@
 
     <!-- Contact -->
     <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="contact-glow" aria-hidden="true"></div>
       <div class="wrap contact-inner">
         <div>
-          <p class="kicker light">Contact</p>
-          <h2 id="contact-h">Let's talk.</h2>
-          <p>Hiring for HR or project management, or want to compare notes on people processes? Send me an email.</p>
+          <p class="kicker light reveal">Contact</p>
+          <h2 id="contact-h" data-split>Let's talk.</h2>
+          <p class="reveal" style="--d: 200ms">Hiring for HR or project management, or want to compare notes on people processes? Send me an email.</p>
         </div>
-        <div class="contact-actions">
+        <div class="contact-actions reveal" style="--d: 300ms">
           <a class="email" href="mailto:rownokrah26@gmail.com">rownokrah26@gmail.com</a>
           <div class="actions">
-            <button class="btn btn-light" type="button" data-copy="rownokrah26@gmail.com">Copy email</button>
-            <a class="btn btn-outline-light" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
+            <button class="btn btn-light magnetic" type="button" data-copy="rownokrah26@gmail.com">Copy email</button>
+            <a class="btn btn-outline-light magnetic" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
           </div>
         </div>
       </div>
@@ -344,6 +430,10 @@
       <span>Chittagong, Bangladesh</span>
     </div>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Back to top">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><circle class="ring-bg" cx="24" cy="24" r="21"/><circle class="ring" cx="24" cy="24" r="21"/><path d="M24 31V17m0 0-6 6m6-6 6 6"/></svg>
+  </a>
 
   <script src="script.js" defer></script>
 </body>
