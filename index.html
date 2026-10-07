@@ -11,14 +11,14 @@
   <meta property="og:description" content="I build clear, fair processes that help people and projects do their best work.">
   <meta property="og:url" content="https://rownok-hr-ls.github.io/">
   <meta property="og:image" content="https://rownok-hr-ls.github.io/images/rownok.jpg">
-  <meta name="theme-color" content="#1f1d24">
+  <meta name="theme-color" content="#0e0a1c">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
-    // Animations only start hidden when JS runs and the visitor hasn't asked for reduced motion.
-    // If script.js never finishes loading, show everything after 3 seconds anyway.
+    // Hidden starting states only apply when JS runs and reduced motion is off.
+    // If script.js never finishes, show everything after 3 seconds anyway.
     (function (h) {
       h.classList.add("js");
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) h.classList.add("motion");
@@ -26,414 +26,395 @@
     })(document.documentElement);
   </script>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="motion.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="cursor" aria-hidden="true"></div>
+  <canvas class="pixels" aria-hidden="true"></canvas>
 
-  <header class="site-header">
-    <div class="wrap bar">
-      <a class="brand" href="#top" aria-label="Rownok Rahman, back to top">
-        <span class="mark" aria-hidden="true">RR</span>
-        <span class="brand-name">Rownok Rahman</span>
-      </a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#about">About</a>
-        <a href="#highlights">Highlights</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-        <span class="nav-ind" aria-hidden="true"></span>
-      </nav>
-      <a class="btn btn-small magnetic" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Rownok Rahman, back to top">
+      <span class="mark" aria-hidden="true">RR</span>
+      <span class="brand-name">ROWNOK RAHMAN</span>
+    </a>
+    <div class="topbar-right">
+      <span class="mono hide-sm">CHITTAGONG, BANGLADESH</span>
+      <a class="mono cv-link" href="Rownok-Rahman-CV.pdf" download>CV ↓</a>
     </div>
-    <div class="read-progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
+    <!-- 00 · Hero -->
     <section class="hero" id="top">
-      <div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow reveal" style="--d: 0ms">HR Manager &amp; Project Manager · LofiStack</p>
-          <h1 data-split>I build clear, fair processes that help people and projects do their best work.</h1>
-          <p class="lede reveal" style="--d: 650ms">I run HR for a 30-person team and manage delivery for around 20 client accounts at the same time, with one goal on both sides: clear rules, real support and accountability.</p>
-          <div class="actions reveal" style="--d: 800ms">
-            <a class="btn magnetic" href="Rownok-Rahman-CV.pdf" download>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
-              Download CV
-            </a>
-            <a class="btn btn-ghost magnetic" href="mailto:rownokrah26@gmail.com">Email me</a>
-          </div>
-          <p class="where reveal" style="--d: 950ms">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Chittagong, Bangladesh
-          </p>
-        </div>
-        <figure class="portrait reveal-portrait" data-parallax>
-          <div class="arch" data-depth="-10"></div>
-          <picture class="photo" data-depth="12">
+      <p class="kicker reveal">HR MANAGER · PROJECT MANAGER · LOFISTACK</p>
+      <h1 data-split>I build clear, fair processes.</h1>
+      <p class="rotator reveal" style="--d: 500ms" aria-live="polite">
+        I run <span class="rot-word" data-words="hiring|attendance|performance|onboarding|client delivery|MEPPS">hiring</span>
+      </p>
+      <p class="lede reveal" style="--d: 650ms">HR for a 30-person team and delivery for around 20 client accounts, at the same time, at LofiStack in Chittagong. One goal on both sides: clear rules, real support and accountability.</p>
+      <p class="terminal reveal" style="--d: 800ms" aria-hidden="true"><span class="prompt">$</span> <span class="term-text"></span><span class="caret"></span></p>
+      <div class="actions reveal" style="--d: 900ms">
+        <a class="btn btn-teal magnetic" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
+        <a class="btn btn-ghost magnetic" href="#mepps">See the work</a>
+      </div>
+      <a class="scroll-hint mono reveal" style="--d: 1100ms" href="#numbers">SCROLL <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <!-- 01 · Numbers -->
+    <section class="numbers" id="numbers" aria-label="At a glance">
+      <dl class="stat-row">
+        <div class="stat reveal"><dt class="mono">PEOPLE SUPPORTED</dt><dd data-count="30">30</dd><span class="mono sub">SOLE HR MANAGER</span></div>
+        <div class="stat reveal" style="--d: 100ms"><dt class="mono">CLIENT ACCOUNTS</dt><dd data-count="20" data-prefix="~">~20</dd><span class="mono sub">AT THE SAME TIME</span></div>
+        <div class="stat reveal" style="--d: 200ms"><dt class="mono">HIRES</dt><dd data-count="7">7</dd><span class="mono sub">POST → INTERVIEW → ONBOARD</span></div>
+        <div class="stat reveal" style="--d: 300ms"><dt class="mono">PROMOTIONS</dt><dd data-count="2">2</dd><span class="mono sub">IN TWO YEARS</span></div>
+      </dl>
+    </section>
+
+    <!-- 02 · About -->
+    <section class="section about" id="about" aria-labelledby="about-h">
+      <div class="about-grid">
+        <figure class="portrait reveal">
+          <div class="portrait-glow" aria-hidden="true"></div>
+          <picture>
             <source srcset="images/rownok.webp" type="image/webp">
             <img src="images/rownok.png" width="720" height="900" alt="Portrait of Rownok Rahman in a dark suit and plum tie">
           </picture>
-          <span class="float f1" data-depth="28"><span><i class="dot"></i>HR Manager</span></span>
-          <span class="float f2" data-depth="-22"><span><i class="dot"></i>Project Manager</span></span>
-          <span class="float f3" data-depth="36"><span>MBA · HRM</span></span>
+          <figcaption class="mono">ROWNOK RAHMAN · CHITTAGONG</figcaption>
         </figure>
-      </div>
-
-      <div class="wrap">
-        <dl class="stats reveal" style="--d: 1100ms">
-          <div><dt>People supported</dt><dd data-count="30">30</dd></div>
-          <div><dt>Client accounts at a time</dt><dd data-count="20" data-prefix="~">~20</dd></div>
-          <div><dt>Hires, end to end</dt><dd data-count="7">7</dd></div>
-          <div><dt>Promotions in two years</dt><dd data-count="2">2</dd></div>
-        </dl>
-      </div>
-      <a class="scroll-cue" href="#about" aria-label="Scroll to About"><span></span></a>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about" aria-labelledby="about-h">
-      <div class="wrap two-col">
         <div>
-          <p class="kicker reveal">About</p>
+          <p class="kicker reveal">01 · ABOUT</p>
           <h2 id="about-h" data-split>People and delivery, looked after together.</h2>
-        </div>
-        <div class="prose" data-stagger>
-          <p>I'm the HR Manager and Project Manager at LofiStack, where I look after both the people and the delivery. On the people side, I run the everyday employee processes: communication, attendance, performance and training. On the operations side, I coordinate resources and day-to-day work so teams stay aligned and delivery stays on track.</p>
-          <p>I joined LofiStack in 2024 as an IT Officer, moved into project management, and now lead HR alongside it. Coming up through the work itself gives me a practical view of how things actually get done, and of what people need to do them well.</p>
-          <p>What I care about most is clear, fair processes, real support for employees, and accountability that helps both the team and the company grow.</p>
-
-          <ol class="path" aria-label="Career path at LofiStack">
-            <li><span class="yr">2024</span><span class="role">IT Officer</span></li>
-            <li><span class="yr">2025</span><span class="role">Project Manager</span></li>
-            <li class="now"><span class="yr">2026</span><span class="role">HR Manager &amp; Project Manager</span></li>
+          <div class="prose" data-stagger>
+            <p>I'm the HR Manager and Project Manager at LofiStack, where I look after both the people and the delivery. On the people side, I run the everyday employee processes: communication, attendance, performance and training. On the operations side, I coordinate resources and day-to-day work so teams stay aligned and delivery stays on track.</p>
+            <p>I joined LofiStack in 2024 as an IT Officer, moved into project management, and now lead HR alongside it. Coming up through the work itself gives me a practical view of how things actually get done, and of what people need to do them well.</p>
+            <p>What I care about most is clear, fair processes, real support for employees, and accountability that helps both the team and the company grow.</p>
+          </div>
+          <ol class="path reveal" aria-label="Career path at LofiStack">
+            <li><span class="mono">2024</span><strong>IT Officer</strong></li>
+            <li><span class="mono">2025</span><strong>Project Manager</strong></li>
+            <li class="now"><span class="mono">2026 · NOW</span><strong>HR Manager &amp; Project Manager</strong></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <!-- Highlights -->
-    <section class="section tinted" id="highlights" aria-labelledby="hl-h">
-      <div class="wrap">
-        <p class="kicker reveal">Highlights</p>
-        <h2 id="hl-h" data-split>Work I'm proud of.</h2>
+    <!-- 03 · MEPPS map -->
+    <section class="section" id="mepps" aria-labelledby="mepps-h">
+      <p class="kicker reveal">02 · HR SYSTEM · MEPPS</p>
+      <h2 id="mepps-h" data-split>What happens when someone clocks in at 9:05.</h2>
+      <p class="section-lede reveal">MEPPS, the Monthly Employee Performance Point System, which I designed and launched at LofiStack in January 2026. Rule breaches and rewards become points, and finance turns the points into deductions and rewards. Same written rules for everyone.</p>
 
-        <div class="hl-grid" data-stagger>
-          <article class="card feature tilt">
-            <div class="card-top">
-              <span class="tag">HR · Launched Jan 2026</span>
-              <h3>MEPPS: Monthly Employee Performance Point System</h3>
-            </div>
-            <p>I designed and launched MEPPS at LofiStack. Each month, rule breaches and rewards are recorded as points against each employee, and finance uses those points to calculate deductions and rewards. Everyone works to the same clear, written rules, which has helped the company prevent and resolve workplace conflicts fairly and consistently.</p>
-
-            <ol class="flow" aria-label="How MEPPS works">
-              <li><span class="n">1</span><strong>Record</strong><span>Breaches and rewards logged as points</span></li>
-              <li><span class="n">2</span><strong>Review</strong><span>Totals checked each month</span></li>
-              <li><span class="n">3</span><strong>Apply</strong><span>Finance turns points into deductions and rewards</span></li>
-            </ol>
-
-            <div class="sim" aria-labelledby="sim-h">
-              <div class="sim-head">
-                <strong id="sim-h">Try it: one employee's month</strong>
-                <span>Example points to show the idea, not the real MEPPS rulebook.</span>
-              </div>
-              <div class="sim-body">
-                <div class="sim-events" role="group" aria-label="Events this month">
-                  <button type="button" class="ev pos" data-points="5" aria-pressed="false">Perfect attendance <b>+5</b></button>
-                  <button type="button" class="ev pos" data-points="3" aria-pressed="true">Helped a teammate <b>+3</b></button>
-                  <button type="button" class="ev pos" data-points="2" aria-pressed="false">Finished training <b>+2</b></button>
-                  <button type="button" class="ev neg" data-points="-2" aria-pressed="true">Late arrival <b>−2</b></button>
-                  <button type="button" class="ev neg" data-points="-3" aria-pressed="false">Missed a deadline <b>−3</b></button>
-                  <button type="button" class="ev neg" data-points="-5" aria-pressed="false">Broke a workplace rule <b>−5</b></button>
-                </div>
-                <div class="gauge" aria-live="polite">
-                  <svg viewBox="0 0 200 116" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="g-arc" x1="0" x2="1">
-                        <stop offset="0" stop-color="var(--neg)"/>
-                        <stop offset="0.5" stop-color="var(--border)"/>
-                        <stop offset="1" stop-color="var(--pos)"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M16 104a84 84 0 0 1 168 0" fill="none" stroke="url(#g-arc)" stroke-width="12" stroke-linecap="round"/>
-                    <g class="needle"><line x1="100" y1="104" x2="100" y2="34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="104" r="8" fill="currentColor"/></g>
-                  </svg>
-                  <p class="score"><span class="score-n">+1</span> <small>points</small></p>
-                  <p class="verdict">Reward: finance adds it to this month's pay.</p>
-                </div>
-              </div>
-            </div>
-
-            <p class="outcome-label">Since launch</p>
-            <ul class="outcomes">
-              <li>Fewer disputes</li>
-              <li>Fewer late arrivals</li>
-              <li>Rewards paid out to those who earned them</li>
-            </ul>
-          </article>
-
-          <article class="card tilt">
-            <div class="card-top">
-              <span class="tag">HR systems</span>
-              <h3>LofiHRM</h3>
-            </div>
-            <p>I helped build and shape LofiHRM, LofiStack's in-house HR software, and I use it every day to run HR for the team.</p>
-            <div class="mini-ui" aria-hidden="true">
-              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 72%"></span><span class="pill ok">Present</span></div>
-              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 54%"></span><span class="pill warn">Late</span></div>
-              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 86%"></span><span class="pill ok">Present</span></div>
-              <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 40%"></span><span class="pill leave">Leave</span></div>
-            </div>
-          </article>
-
-          <article class="card tilt">
-            <div class="card-top">
-              <span class="tag">Career</span>
-              <h3>Two promotions in two years</h3>
-            </div>
-            <p>From IT Officer in 2024 to Project Manager in 2025, then HR Manager in 2026 while keeping the project management role.</p>
-            <div class="stairs" aria-hidden="true">
-              <span style="--h: 34%">2024</span><span style="--h: 62%">2025</span><span style="--h: 92%">2026</span>
-            </div>
-          </article>
+      <div class="map" data-state="off">
+        <svg class="map-lines" aria-hidden="true"></svg>
+        <div class="map-col">
+          <div class="node" data-node="late"><span class="badge" data-off="UNRECORDED" data-on="LOGGED">UNRECORDED</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M5 3 2 6M19 3l3 3"/></svg><strong>Late check-in</strong><span class="mono">ATTENDANCE · 9:05</span></div>
+          <div class="node" data-node="deadline"><span class="badge" data-off="UNRECORDED" data-on="LOGGED">UNRECORDED</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12M6 22h12M7 2c0 6 10 6 10 10S7 16 7 22M17 2c0 6-10 6-10 10s10 4 10 10"/></svg><strong>Missed deadline</strong><span class="mono">DELIVERY</span></div>
+          <div class="node" data-node="helped"><span class="badge" data-off="UNNOTICED" data-on="LOGGED">UNNOTICED</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><strong>Helped a teammate</strong><span class="mono">TEAMWORK</span></div>
         </div>
+        <div class="map-col">
+          <div class="node" data-node="points"><span class="badge" data-off="OFF" data-on="ON">OFF</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v10M7 9h10M7 19h10"/></svg><strong>Recorded as points</strong><span class="mono">MEPPS · WRITTEN RULES</span></div>
+        </div>
+        <div class="map-col">
+          <div class="node" data-node="review"><span class="badge" data-off="OFF" data-on="MONTHLY">OFF</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/></svg><strong>Monthly review</strong><span class="mono">HR · ROWNOK</span></div>
+        </div>
+        <div class="map-col">
+          <div class="node" data-node="deduct"><span class="badge" data-off="ARGUED" data-on="CLEAR">ARGUED</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><strong>Deduction</strong><span class="mono">FINANCE · PAYROLL</span></div>
+          <div class="node" data-node="reward"><span class="badge" data-off="MISSED" data-on="PAID">MISSED</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><strong>Reward</strong><span class="mono">FINANCE · PAYROLL</span></div>
+          <div class="node" data-node="fair"><span class="badge" data-off="0" data-on="FAIR">0</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg><strong>Same rules for all</strong><span class="mono">FEWER DISPUTES</span></div>
+        </div>
+      </div>
 
-        <article class="case reveal" aria-labelledby="case-h">
-          <header class="case-head">
-            <div>
-              <span class="tag">Case study · Client project</span>
-              <h3 id="case-h">ARC Affiliates: multi-industry CRM delivery on GoHighLevel</h3>
-            </div>
-            <dl class="case-meta">
-              <div><dt>My role</dt><dd>Project Manager &amp; client communication</dd></div>
-              <div><dt>Platform</dt><dd>GoHighLevel</dd></div>
-            </dl>
-          </header>
+      <div class="map-console">
+        <button class="token" type="button" aria-label="Switch MEPPS on">
+          <span class="mark">RR</span>
+        </button>
+        <p class="map-story" aria-live="polite">9:05 AM. Without a system, a late arrival turns into a conversation, a missed deadline into an argument, and good work goes unnoticed. <strong>Drag the RR mark onto the map</strong> (or click it) to switch MEPPS on.</p>
+        <dl class="map-count">
+          <div><dt class="mono">OPEN DISPUTES</dt><dd class="c-disputes">3</dd></div>
+          <div><dt class="mono">POINTS LOGGED</dt><dd class="c-points">0</dd></div>
+        </dl>
+      </div>
+      <p class="mono fineprint">ILLUSTRATION OF THE PROCESS · SINCE LAUNCH: FEWER DISPUTES, FEWER LATE ARRIVALS, REWARDS PAID OUT</p>
 
-          <div class="case-body">
-            <div>
-              <h4>The challenge</h4>
-              <p>ARC Affiliates runs sub-accounts across five industries: life insurance, credit, event management, spa/medical services, and life &amp; health. Each business had its own sales process, lead sources and follow-up needs, but every team needed one place to capture, organize and track its leads and opportunities.</p>
-              <h4>My part</h4>
-              <p>I was the Project Manager and the client's main point of contact. I planned and coordinated delivery across every sub-account and handled all client communication.</p>
-            </div>
-            <div>
-              <h4>What we delivered</h4>
-              <div class="tabs" role="tablist" aria-label="Sub-accounts">
-                <button type="button" role="tab" id="t-1" aria-controls="p-1" aria-selected="true">Life insurance &amp; credit</button>
-                <button type="button" role="tab" id="t-2" aria-controls="p-2" aria-selected="false" tabindex="-1">Event management</button>
-                <button type="button" role="tab" id="t-3" aria-controls="p-3" aria-selected="false" tabindex="-1">Spa / medical, life &amp; health</button>
-                <span class="tab-ind" aria-hidden="true"></span>
-              </div>
-              <div class="panels">
-                <div class="panel" role="tabpanel" id="p-1" aria-labelledby="t-1">
-                  <ul class="ticks">
-                    <li>CRM workflows for lead management, follow-ups and opportunity tracking.</li>
-                    <li>Optimized day-to-day client operations inside the CRM.</li>
-                    <li>Mapped the challenges of maintaining these systems and costed the ongoing requirements, so the client could plan ahead.</li>
-                  </ul>
-                </div>
-                <div class="panel" role="tabpanel" id="p-2" aria-labelledby="t-2" hidden>
-                  <ul class="ticks">
-                    <li>Connected external systems to the CRM.</li>
-                    <li>Leads and opportunities now sync automatically, so the team tracks everything in one place.</li>
-                  </ul>
-                </div>
-                <div class="panel" role="tabpanel" id="p-3" aria-labelledby="t-3" hidden>
-                  <ul class="ticks">
-                    <li>CRM workflows developed for spa/medical agencies and life &amp; health clients.</li>
-                    <li>Each workflow adapted to that business's specific requirements.</li>
-                  </ul>
-                </div>
-              </div>
-              <p class="across"><strong>Across all accounts:</strong> pipelines and automations that follow each lead from first contact to the right sales or service stage.</p>
-            </div>
+      <!-- Sample month simulator -->
+      <div class="sim card reveal" aria-labelledby="sim-h">
+        <div class="sim-head">
+          <p class="kicker">TRY IT</p>
+          <h3 id="sim-h">One employee's month</h3>
+          <p class="muted">Example points to show the idea, not the real MEPPS rulebook.</p>
+        </div>
+        <div class="sim-body">
+          <div class="sim-events" role="group" aria-label="Events this month">
+            <button type="button" class="ev pos" data-points="5" aria-pressed="false">Perfect attendance <b>+5</b></button>
+            <button type="button" class="ev pos" data-points="3" aria-pressed="true">Helped a teammate <b>+3</b></button>
+            <button type="button" class="ev pos" data-points="2" aria-pressed="false">Finished training <b>+2</b></button>
+            <button type="button" class="ev neg" data-points="-2" aria-pressed="true">Late arrival <b>−2</b></button>
+            <button type="button" class="ev neg" data-points="-3" aria-pressed="false">Missed a deadline <b>−3</b></button>
+            <button type="button" class="ev neg" data-points="-5" aria-pressed="false">Broke a workplace rule <b>−5</b></button>
           </div>
+          <div class="gauge" aria-live="polite">
+            <svg viewBox="0 0 200 116" aria-hidden="true">
+              <defs>
+                <linearGradient id="g-arc" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ff7a85"/>
+                  <stop offset="0.5" stop-color="#3a3354"/>
+                  <stop offset="1" stop-color="#5cd6bb"/>
+                </linearGradient>
+              </defs>
+              <path d="M16 104a84 84 0 0 1 168 0" fill="none" stroke="url(#g-arc)" stroke-width="12" stroke-linecap="round"/>
+              <g class="needle"><line x1="100" y1="104" x2="100" y2="34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="104" r="8" fill="currentColor"/></g>
+            </svg>
+            <p class="score"><span class="score-n">+1</span> <small class="mono">POINTS</small></p>
+            <p class="verdict">Reward: finance adds it to this month's pay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <p class="result"><strong>The result:</strong> client teams can track and manage their opportunities far more easily. The client confirmed that all requested work was completed successfully and gave positive feedback on the implementations.</p>
+    <!-- 04 · Five layers -->
+    <section class="layers-sec" id="how" aria-labelledby="how-h">
+      <div class="layers-sticky">
+        <div class="layers-copy">
+          <p class="kicker reveal">03 · HOW I RUN HR</p>
+          <h2 id="how-h" data-split>Every team I support runs on five layers.</h2>
+          <p class="section-lede reveal">Scroll and the stack opens. Hover a layer to see what sits on it.</p>
+          <div class="layer-detail card" aria-live="polite">
+            <p class="mono ld-num">LAYER 01 OF 5</p>
+            <h3 class="ld-name">Hiring &amp; onboarding</h3>
+            <p class="ld-desc muted">From job post to first day.</p>
+            <ul class="ld-items"></ul>
+          </div>
+        </div>
+        <div class="stack" role="list" aria-label="Five layers">
+          <button type="button" class="layer" role="listitem" data-i="4" data-name="Communication &amp; relations" data-desc="Keeping people informed and problems small." data-items="Internal communication|Employee relations|Conflict resolution"><span class="mono">LAYER 05</span><strong>Communication &amp; relations</strong></button>
+          <button type="button" class="layer" role="listitem" data-i="3" data-name="Training &amp; policy" data-desc="Helping people grow, with rules written down." data-items="Training &amp; development|HR policy &amp; process design"><span class="mono">LAYER 04</span><strong>Training &amp; policy</strong></button>
+          <button type="button" class="layer" role="listitem" data-i="2" data-name="Performance &amp; MEPPS" data-desc="Monthly points, reviewed fairly, applied by finance." data-items="Performance management|MEPPS monthly points|Reward &amp; disciplinary systems|Payroll input to finance"><span class="mono">LAYER 03</span><strong>Performance &amp; MEPPS</strong></button>
+          <button type="button" class="layer" role="listitem" data-i="1" data-name="Attendance &amp; records" data-desc="Who's in, who's late, who's on leave, every day." data-items="Attendance management|LofiHRM, the in-house HR software I helped build"><span class="mono">LAYER 02</span><strong>Attendance &amp; records</strong></button>
+          <button type="button" class="layer" role="listitem" data-i="0" data-name="Hiring &amp; onboarding" data-desc="From job post to first day." data-items="Job posts|Interviews|Onboarding|~7 hires so far"><span class="mono">LAYER 01</span><strong>Hiring &amp; onboarding</strong></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · Highlights -->
+    <section class="section" id="highlights" aria-labelledby="hl-h">
+      <p class="kicker reveal">04 · ALSO BUILT</p>
+      <h2 id="hl-h" data-split>Systems and steps.</h2>
+      <div class="hl-grid" data-stagger>
+        <article class="card spot">
+          <p class="kicker">HR SYSTEMS</p>
+          <h3>LofiHRM</h3>
+          <p class="muted">I helped build and shape LofiHRM, LofiStack's in-house HR software, and I use it every day to run HR for the team.</p>
+          <div class="mini-ui" aria-hidden="true">
+            <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 72%"></span><span class="pill ok">PRESENT</span></div>
+            <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 54%"></span><span class="pill warn">LATE</span></div>
+            <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 86%"></span><span class="pill ok">PRESENT</span></div>
+            <div class="mini-row"><span class="av"></span><span class="mbar" style="--w: 40%"></span><span class="pill leave">LEAVE</span></div>
+          </div>
+        </article>
+        <article class="card spot">
+          <p class="kicker">CAREER</p>
+          <h3>Two promotions in two years</h3>
+          <p class="muted">From IT Officer in 2024 to Project Manager in 2025, then HR Manager in 2026 while keeping the project management role.</p>
+          <div class="stairs" aria-hidden="true">
+            <span style="--h: 34%">2024</span><span style="--h: 62%">2025</span><span style="--h: 92%">2026</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- 06 · Experience -->
     <section class="section" id="experience" aria-labelledby="exp-h">
-      <div class="wrap">
-        <p class="kicker reveal">Experience</p>
-        <h2 id="exp-h" data-split>Where I've worked.</h2>
+      <p class="kicker reveal">05 · EXPERIENCE</p>
+      <h2 id="exp-h" data-split>Where I've worked.</h2>
+      <p class="section-lede reveal">Click a row to open it.</p>
+      <ol class="rows">
+        <li class="row reveal open">
+          <button type="button" class="row-head" aria-expanded="true" aria-controls="r1">
+            <span class="mono n">01</span><strong>HR Manager &amp; Project Manager</strong><span class="where">LofiStack</span><span class="mono when">JAN 2026 – NOW</span><span class="mono open-lbl" aria-hidden="true">OPEN ↓</span>
+          </button>
+          <div class="row-body" id="r1"><ul>
+            <li>Sole HR manager for a 30-person team, running the full employee lifecycle: communication, attendance, performance and training.</li>
+            <li>Run recruitment end to end, from job posts and interviews to onboarding, with around 7 hires so far.</li>
+            <li>Designed and launched MEPPS, the monthly point system that feeds finance the data for deductions and rewards.</li>
+            <li>Manage delivery for around 20 client accounts at a time, working with the other project managers to keep operations running smoothly.</li>
+            <li>Coordinate people and resources across teams so HR and delivery priorities stay aligned.</li>
+          </ul></div>
+        </li>
+        <li class="row reveal">
+          <button type="button" class="row-head" aria-expanded="false" aria-controls="r2">
+            <span class="mono n">02</span><strong>Project Manager</strong><span class="where">LofiStack</span><span class="mono when">JAN 2025 – DEC 2025</span><span class="mono open-lbl" aria-hidden="true">OPEN ↓</span>
+          </button>
+          <div class="row-body" id="r2"><ul>
+            <li>Managed delivery for around 20 concurrent client accounts.</li>
+            <li>Planned and tracked work in ClickUp and ProofHub, and ran team and client communication on Discord.</li>
+            <li>Coordinated resources and timelines across teams to keep projects on track.</li>
+          </ul></div>
+        </li>
+        <li class="row reveal">
+          <button type="button" class="row-head" aria-expanded="false" aria-controls="r3">
+            <span class="mono n">03</span><strong>IT Officer</strong><span class="where">LofiStack</span><span class="mono when">JAN 2024 – DEC 2024</span><span class="mono open-lbl" aria-hidden="true">OPEN ↓</span>
+          </button>
+          <div class="row-body" id="r3"><ul>
+            <li>Set up and maintained company systems and provided day-to-day IT support.</li>
+            <li>Integrated business tools so data and workflows connect.</li>
+            <li>Built 12 conversion-focused websites for clients.</li>
+            <li>Built a business CRM.</li>
+          </ul></div>
+        </li>
+        <li class="row reveal">
+          <button type="button" class="row-head" aria-expanded="false" aria-controls="r4">
+            <span class="mono n">04</span><strong>Intern, Personnel Department</strong><span class="where">Felix Fashion Limited · Four H Group</span><span class="mono when">MAY 2023 – JUL 2023</span><span class="mono open-lbl" aria-hidden="true">OPEN ↓</span>
+          </button>
+          <div class="row-body" id="r4"><ul>
+            <li>Supported the Personnel (HR) department's day-to-day work at Felix Fashion Limited, a sister concern of Four H Group, in Chittagong.</li>
+          </ul></div>
+        </li>
+      </ol>
+    </section>
 
-        <ol class="timeline">
-          <li class="job current reveal">
-            <div class="when">Jan 2026 – Present</div>
-            <div class="what">
-              <h3>HR Manager &amp; Project Manager</h3>
-              <p class="org">LofiStack</p>
-              <ul>
-                <li>Sole HR manager for a 30-person team, running the full employee lifecycle: communication, attendance, performance and training.</li>
-                <li>Run recruitment end to end, from job posts and interviews to onboarding, with around 7 hires so far.</li>
-                <li>Designed and launched MEPPS, the monthly point system that feeds finance the data for deductions and rewards.</li>
-                <li>Manage delivery for around 20 client accounts at a time, working with the other project managers to keep operations running smoothly.</li>
-                <li>Coordinate people and resources across teams so HR and delivery priorities stay aligned.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job reveal">
-            <div class="when">Jan 2025 – Dec 2025</div>
-            <div class="what">
-              <h3>Project Manager</h3>
-              <p class="org">LofiStack</p>
-              <ul>
-                <li>Managed delivery for around 20 concurrent client accounts.</li>
-                <li>Planned and tracked work in ClickUp and ProofHub, and ran team and client communication on Discord.</li>
-                <li>Coordinated resources and timelines across teams to keep projects on track.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job reveal">
-            <div class="when">Jan 2024 – Dec 2024</div>
-            <div class="what">
-              <h3>IT Officer</h3>
-              <p class="org">LofiStack</p>
-              <ul>
-                <li>Set up and maintained company systems and provided day-to-day IT support.</li>
-                <li>Integrated business tools so data and workflows connect.</li>
-                <li>Built 12 conversion-focused websites for clients.</li>
-                <li>Built a business CRM.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job reveal">
-            <div class="when">May 2023 – Jul 2023</div>
-            <div class="what">
-              <h3>Intern, Personnel Department</h3>
-              <p class="org">Felix Fashion Limited <span>(a sister concern of Four H Group)</span> · Chittagong</p>
-              <ul>
-                <li>Supported the Personnel (HR) department's day-to-day work.</li>
-              </ul>
-            </div>
-          </li>
-        </ol>
+    <!-- 07 · Case study, horizontal -->
+    <section class="hscroll" id="work" aria-labelledby="work-h">
+      <div class="hs-sticky">
+        <div class="hs-head">
+          <div>
+            <p class="kicker reveal">06 · CASE STUDY · PROJECT MANAGER &amp; CLIENT COMMUNICATION</p>
+            <h2 id="work-h" data-split>ARC Affiliates: five industries, one CRM.</h2>
+          </div>
+          <p class="mono hs-meta reveal">GOHIGHLEVEL · KEEP SCROLLING, THE ROW MOVES WITH YOU</p>
+        </div>
+        <div class="hs-track">
+          <article class="hs-card intro">
+            <p class="kicker">THE CHALLENGE</p>
+            <h3>One place for every lead.</h3>
+            <p>ARC Affiliates runs sub-accounts across five industries. Each business had its own sales process, lead sources and follow-up needs, but every team needed one place to capture, organize and track its leads and opportunities.</p>
+            <p class="muted">I was the Project Manager and the client's main point of contact. I planned and coordinated delivery across every sub-account and handled all client communication.</p>
+          </article>
+          <article class="hs-card">
+            <p class="mono idx">SUB-ACCOUNTS 01–02</p>
+            <h3>Life insurance &amp; credit</h3>
+            <ul class="ticks">
+              <li>CRM workflows for lead management, follow-ups and opportunity tracking.</li>
+              <li>Optimized day-to-day client operations inside the CRM.</li>
+              <li>Mapped the challenges of maintaining these systems and costed the ongoing requirements, so the client could plan ahead.</li>
+            </ul>
+          </article>
+          <article class="hs-card">
+            <p class="mono idx">SUB-ACCOUNT 03</p>
+            <h3>Event management</h3>
+            <ul class="ticks">
+              <li>Connected external systems to the CRM.</li>
+              <li>Leads and opportunities now sync automatically, so the team tracks everything in one place.</li>
+            </ul>
+          </article>
+          <article class="hs-card">
+            <p class="mono idx">SUB-ACCOUNTS 04–05</p>
+            <h3>Spa / medical, life &amp; health</h3>
+            <ul class="ticks">
+              <li>CRM workflows developed for spa/medical agencies and life &amp; health clients.</li>
+              <li>Each workflow adapted to that business's specific requirements.</li>
+            </ul>
+          </article>
+          <article class="hs-card">
+            <p class="mono idx">ACROSS ALL ACCOUNTS</p>
+            <h3>Pipelines &amp; automations</h3>
+            <p>Pipelines and automations that follow each lead from first contact to the right sales or service stage.</p>
+          </article>
+          <article class="hs-card result">
+            <p class="kicker">THE RESULT</p>
+            <h3>Work completed. Client happy.</h3>
+            <p>Client teams can track and manage their opportunities far more easily. The client confirmed that all requested work was completed successfully and gave positive feedback on the implementations.</p>
+          </article>
+        </div>
+        <div class="hs-progress" aria-hidden="true"><span></span></div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section tinted" id="skills" aria-labelledby="skills-h">
-      <div class="wrap">
-        <p class="kicker reveal">Skills</p>
-        <h2 id="skills-h" data-split>What I bring.</h2>
-
-        <div class="skill-grid" data-stagger>
-          <div class="skill-col tilt">
-            <h3>HR</h3>
-            <ul>
-              <li>Recruitment &amp; onboarding</li>
-              <li>Employee relations &amp; conflict resolution</li>
-              <li>Performance management</li>
-              <li>Attendance management</li>
-              <li>Payroll input</li>
-              <li>Training &amp; development</li>
-              <li>HR policy &amp; process design</li>
-              <li>Reward &amp; disciplinary systems</li>
-              <li>Internal communication</li>
-            </ul>
-          </div>
-          <div class="skill-col tilt">
-            <h3>Project &amp; operations</h3>
-            <ul>
-              <li>Client management &amp; communication</li>
-              <li>Project delivery &amp; planning</li>
-              <li>Resource coordination</li>
-              <li>Multi-account management (20+ clients)</li>
-              <li>CRM implementation &amp; workflow automation</li>
-              <li>Systems integration</li>
-            </ul>
-          </div>
-          <div class="skill-col tilt">
-            <h3>Technical</h3>
-            <ul>
-              <li>IT support &amp; systems setup</li>
-              <li>Website building (WordPress)</li>
-              <li>CRM building</li>
-            </ul>
-            <h3 class="sub">Languages</h3>
-            <ul class="langs">
-              <li>Bangla <span class="lvl">Fluent</span><span class="meter" style="--v: 100%"></span></li>
-              <li>English <span class="lvl">Professional</span><span class="meter" style="--v: 80%"></span></li>
-            </ul>
-          </div>
+    <!-- 08 · Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-h">
+      <p class="kicker reveal">07 · SKILLS</p>
+      <h2 id="skills-h" data-split>What I bring.</h2>
+      <div class="skill-grid" data-stagger>
+        <div class="card spot skill-col">
+          <p class="kicker">HR</p>
+          <ul>
+            <li>Recruitment &amp; onboarding</li><li>Employee relations &amp; conflict resolution</li><li>Performance management</li><li>Attendance management</li><li>Payroll input</li><li>Training &amp; development</li><li>HR policy &amp; process design</li><li>Reward &amp; disciplinary systems</li><li>Internal communication</li>
+          </ul>
         </div>
+        <div class="card spot skill-col">
+          <p class="kicker">PROJECT &amp; OPERATIONS</p>
+          <ul>
+            <li>Client management &amp; communication</li><li>Project delivery &amp; planning</li><li>Resource coordination</li><li>Multi-account management (20+ clients)</li><li>CRM implementation &amp; workflow automation</li><li>Systems integration</li>
+          </ul>
+        </div>
+        <div class="card spot skill-col">
+          <p class="kicker">TECHNICAL</p>
+          <ul>
+            <li>IT support &amp; systems setup</li><li>Website building (WordPress)</li><li>CRM building</li>
+          </ul>
+          <p class="kicker sub">LANGUAGES</p>
+          <ul class="langs">
+            <li>Bangla <span class="mono lvl">FLUENT</span><span class="meter" style="--v: 100%"></span></li>
+            <li>English <span class="mono lvl">PROFESSIONAL</span><span class="meter" style="--v: 80%"></span></li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="tools reveal">
-          <h3>Tools I use</h3>
-          <div class="marquee">
-            <div class="marquee-track">
-              <ul class="chips">
-                <li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li>
-              </ul>
-              <ul class="chips" aria-hidden="true">
-                <li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li>
-              </ul>
-            </div>
-          </div>
+      <p class="mono tools-label reveal">TOOLS I USE · HOVER TO PAUSE</p>
+      <div class="marquee reveal">
+        <div class="marquee-track">
+          <ul class="chips"><li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li></ul>
+          <ul class="chips" aria-hidden="true"><li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp</li><li>ProofHub</li><li>Google Workspace</li><li>Excel / Google Sheets</li><li>Slack</li><li>Discord</li><li>Canva</li><li>WordPress</li></ul>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- 09 · Education -->
     <section class="section" id="education" aria-labelledby="edu-h">
-      <div class="wrap">
-        <p class="kicker reveal">Education</p>
-        <h2 id="edu-h" data-split>Trained in HR, twice over.</h2>
-        <div class="edu-grid" data-stagger>
-          <article class="edu tilt">
-            <span class="edu-yr" data-count="2023" data-plain>2023</span>
-            <h3>MBA in Human Resource Management</h3>
-            <p>Port City International University</p>
-          </article>
-          <article class="edu tilt">
-            <span class="edu-yr" data-count="2022" data-plain>2022</span>
-            <h3>BBA in Human Resource Management</h3>
-            <p>Port City International University</p>
-            <p class="note">Began at East West University, then transferred credits to Port City International University.</p>
-          </article>
-        </div>
+      <p class="kicker reveal">08 · EDUCATION</p>
+      <h2 id="edu-h" data-split>Trained in HR, twice over.</h2>
+      <div class="edu-grid" data-stagger>
+        <article class="card spot edu">
+          <span class="edu-yr" data-count="2023" data-plain>2023</span>
+          <h3>MBA in Human Resource Management</h3>
+          <p class="muted">Port City International University</p>
+        </article>
+        <article class="card spot edu">
+          <span class="edu-yr" data-count="2022" data-plain>2022</span>
+          <h3>BBA in Human Resource Management</h3>
+          <p class="muted">Port City International University</p>
+          <p class="mono note">BEGAN AT EAST WEST UNIVERSITY · CREDITS TRANSFERRED</p>
+        </article>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- 10 · Contact -->
     <section class="contact" id="contact" aria-labelledby="contact-h">
-      <div class="contact-glow" aria-hidden="true"></div>
-      <div class="wrap contact-inner">
-        <div>
-          <p class="kicker light reveal">Contact</p>
-          <h2 id="contact-h" data-split>Let's talk.</h2>
-          <p class="reveal" style="--d: 200ms">Hiring for HR or project management, or want to compare notes on people processes? Send me an email.</p>
-        </div>
-        <div class="contact-actions reveal" style="--d: 300ms">
-          <a class="email" href="mailto:rownokrah26@gmail.com">rownokrah26@gmail.com</a>
-          <div class="actions">
-            <button class="btn btn-light magnetic" type="button" data-copy="rownokrah26@gmail.com">Copy email</button>
-            <a class="btn btn-outline-light magnetic" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
-          </div>
-        </div>
+      <p class="kicker reveal">09 · CONTACT</p>
+      <h2 id="contact-h" data-split>Let's talk.</h2>
+      <p class="section-lede reveal">Hiring for HR or project management, or want to compare notes on people processes? Send me an email.</p>
+      <a class="email reveal" href="mailto:rownokrah26@gmail.com">rownokrah26@gmail.com</a>
+      <div class="actions reveal">
+        <button class="btn btn-teal magnetic" type="button" data-copy="rownokrah26@gmail.com">Copy email</button>
+        <a class="btn btn-ghost magnetic" href="Rownok-Rahman-CV.pdf" download>Download CV</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap bar">
-      <span>© <span data-year>2026</span> Rownok Rahman</span>
-      <span>Chittagong, Bangladesh</span>
-    </div>
+  <footer class="footer mono">
+    <span>© <span data-year>2026</span> ROWNOK RAHMAN</span>
+    <span>CHITTAGONG, BANGLADESH</span>
   </footer>
 
-  <a class="to-top" href="#top" aria-label="Back to top">
-    <svg viewBox="0 0 48 48" aria-hidden="true"><circle class="ring-bg" cx="24" cy="24" r="21"/><circle class="ring" cx="24" cy="24" r="21"/><path d="M24 31V17m0 0-6 6m6-6 6 6"/></svg>
-  </a>
+  <!-- Floating dock -->
+  <nav class="dock" aria-label="Sections">
+    <a href="#top" data-label="Home"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a>
+    <a href="#about" data-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></a>
+    <a href="#mepps" data-label="MEPPS"><svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="m12 18 4-6"/></svg></a>
+    <a href="#how" data-label="How I run HR"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></a>
+    <a href="#experience" data-label="Experience"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></a>
+    <a href="#work" data-label="Case study"><svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 4 7-8"/><path d="M14 8h6v6"/></svg></a>
+    <a href="#skills" data-label="Skills"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></a>
+    <a href="#contact" data-label="Contact"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+  </nav>
 
   <script src="script.js" defer></script>
 </body>
