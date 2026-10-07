@@ -66,16 +66,18 @@
           <div class="term-box"><div class="term-ghost">close the month · attendance + MEPPS points + finance hand-off · 3 steps · done ✓</div><div class="term-live"><span class="term-text"></span><span class="term-caret">|</span></div></div>
         </div>
         <div class="btn-row">
-          <a class="btn btn-accent" href="Rownok-Rahman-CV.pdf" download><span class="shine"></span><span>Download CV</span><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-accent" href="Rownok-Rahman-CV.pdf" download><span class="shine"></span><span>Download CV</span><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           <a class="btn btn-outline" href="#people"><span class="shine"></span><span>See the work</span></a>
         </div>
       </div>
 
-      <div class="coverflow" data-coverflow>
-        <div class="cf-stage"></div>
+      <div class="coverflow">
+        <div class="cf-region" role="region" aria-roledescription="carousel" aria-label="Perspective image carousel" tabindex="0" data-coverflow>
+          <div class="cf-view"><div class="cf-stage"></div></div>
+        </div>
       </div>
       <div class="cf-nav">
-        <button class="round-btn" type="button" data-cf="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="round-btn" type="button" data-cf="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
         <span class="mono-label cf-label">01 / 09 · Rownok Rahman</span>
         <button class="round-btn" type="button" data-cf="next" aria-label="Next"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
       </div>
@@ -94,11 +96,11 @@
 
     <!-- ============ PEOPLE (rack, list, marquee) ============ -->
     <div id="people">
-      <section class="sec">
+      <section class="sec rack-sec">
         <div class="sec-bg dots" aria-hidden="true"></div>
         <div class="sec-head">
           <p class="kicker">HR · people, process, records</p>
-          <h2 class="h2" data-split>Processes that have a job to do.</h2>
+          <h2 class="h2">Processes that have a job to do.</h2>
           <p class="sec-sub">Twelve of the systems and routines I run at LofiStack, from the first job post to the monthly MEPPS review. Slide through the rack.</p>
         </div>
         <div class="rack-wrap">
@@ -113,10 +115,10 @@
         </div>
       </section>
 
-      <section class="sec" id="career">
+      <section class="sec tl-sec" id="career">
         <div class="sec-head">
           <p class="kicker">Career · LofiStack and before</p>
-          <h2 class="h2" data-split>Four roles, one direction.</h2>
+          <h2 class="h2">Four roles, one direction.</h2>
           <p class="sec-sub">IT Officer in 2024, Project Manager in 2025, HR Manager alongside it in 2026. Hover a row to preview it. Click to open the details.</p>
         </div>
         <div class="tilt-list-wrap">
@@ -124,23 +126,23 @@
         </div>
       </section>
 
-      <section class="sec dark-sec">
+      <section class="sec dark-sec dark">
         <div class="sec-bg ellipse" aria-hidden="true"></div>
         <div class="sec-head row-head">
           <div>
             <p class="kicker">Everything I run</p>
-            <h3 class="h3">Twelve routines, every one live.</h3>
+            <h3 class="h3 wall-h">Twelve routines, every one live.</h3>
           </div>
           <div class="row-actions">
-            <p class="kicker hide-sm">Auto-scrolling · hover to pause · click to open</p>
+            <p class="kicker hide-md">Auto-scrolling · hover to pause · click to open</p>
             <a class="btn btn-outline" href="#career"><span class="shine"></span><span>Experience</span></a>
-            <a class="btn btn-accent" href="#system"><span class="shine"></span><span>See the system</span><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-accent" href="#system"><span class="shine"></span><span>See the system</span><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
         </div>
         <div class="mq-wrap">
           <div class="mq-fade l"></div><div class="mq-fade r"></div>
-          <div class="marquee" style="--duration:70s;--gap:20px" data-marquee="a"></div>
-          <div class="marquee reverse" style="--duration:70s;--gap:20px" data-marquee="b"></div>
+          <div class="marquee" style="--duration:35s;--gap:20px" data-marquee="a"></div>
+          <div class="marquee reverse" style="--duration:35s;--gap:20px" data-marquee="b"></div>
         </div>
       </section>
     </div>
@@ -151,7 +153,7 @@
         <div class="sec-bg aura" aria-hidden="true"><i class="aura-blob"></i><i class="aura-blob-2"></i><i class="aura-blob-3"></i></div>
         <div class="sec-head">
           <p class="kicker">HR system · MEPPS</p>
-          <h2 class="h2" data-split>What happens to a late check-in at 9:05.</h2>
+          <h2 class="h2">What happens to a late check-in at 9:05.</h2>
           <p class="sec-sub">MEPPS, the Monthly Employee Performance Point System I designed and launched in January 2026. Rule breaches and rewards become points, finance applies them. Same written rules for everyone.</p>
         </div>
         <div class="map-wrap">
@@ -182,7 +184,7 @@
             <button class="console-mark" type="button" aria-label="Switch MEPPS on"><span class="rr-mark">RR</span></button>
             <p class="console-text"><b class="c-head">9:05 AM. Nobody is keeping score.</b> <span class="c-body">Late arrivals get argued, deadlines slip quietly, good work goes unnoticed. Drag the RR mark onto the map to switch MEPPS on.</span></p>
             <div class="console-count">
-              <div><div class="cnum c-wait">14</div><span class="mono-label">disputes</span></div>
+              <div><div class="cnum c-wait">3</div><span class="mono-label">disputes</span></div>
               <div><div class="cnum c-done">0</div><span class="mono-label">settled</span></div>
             </div>
           </div>
@@ -194,7 +196,7 @@
         <div class="sec-bg dots" aria-hidden="true"></div>
         <div class="sec-head">
           <p class="kicker">HR system · structure</p>
-          <h2 class="h2" data-split>Every team I run sits on five layers.</h2>
+          <h2 class="h2">Every team I run sits on five layers.</h2>
           <p class="sec-sub">Scroll and the stack opens. Hover a layer to see what sits on it.</p>
         </div>
         <div class="layers-grid">
@@ -217,7 +219,7 @@
         <div class="hs-sticky">
           <div class="sec-head">
             <p class="kicker">Project management · client delivery</p>
-            <h2 class="h2" data-split>Client builds I managed.</h2>
+            <h2 class="h2">Client builds I managed.</h2>
             <p class="sec-sub">ARC Affiliates: one GoHighLevel account, five industries. I was the Project Manager and handled every client conversation. Keep scrolling, the row moves with you.</p>
           </div>
           <div class="hs-bar-row">
@@ -243,49 +245,50 @@
 
     <!-- ============ HIRING (kanban + inbox) ============ -->
     <div id="hiring">
-      <section class="sec">
+      <section class="sec sec-board">
         <div class="sec-bg dots" aria-hidden="true"></div>
         <div class="sec-head">
           <p class="kicker">HR · recruitment</p>
-          <h2 class="h2" data-split>Hiring you can watch move.</h2>
+          <h2 class="h2">Hiring you can watch move.</h2>
           <p class="sec-sub">Job posts, interviews and onboarding on one board. Seven hires so far, every one run end to end, from the first post to the first day.</p>
         </div>
         <div class="win-wrap">
           <div class="window">
-            <div class="win-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="mono-label">Hiring board · LofiStack</span><span class="mono-label live"><i></i>live</span></div>
+            <div class="win-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="win-title">Hiring board · LofiStack</span>
+              <div class="win-right"><span>Interviewing <b data-k-play>0</b></span><span>Hired <b class="accent" data-k-won>0</b></span><span class="win-live"><i></i>Live</span></div>
+            </div>
             <div class="kanban-scroll"><div class="kanban" data-kanban></div></div>
           </div>
           <div class="stat-row">
+            <div><div class="stat-n" data-k-booked>0</div><p class="kicker">Offer or hired, right now</p></div>
             <div><div class="stat-n">7</div><p class="kicker">Hires, end to end</p></div>
             <div><div class="stat-n">30</div><p class="kicker">People supported</p></div>
-            <div><div class="stat-n">1</div><p class="kicker">HR manager</p></div>
           </div>
-          <p class="footnote">Illustrative board. Names are placeholders.</p>
         </div>
       </section>
 
-      <section class="sec">
+      <section class="sec sec-inbox">
         <div class="sec-bg aura" aria-hidden="true"><i class="aura-blob"></i><i class="aura-blob-2"></i><i class="aura-blob-3"></i></div>
         <div class="sec-head">
           <p class="kicker">HR · employee requests</p>
-          <h2 class="h2" data-split>Every request read, sorted, answered.</h2>
+          <h2 class="h2">Every request read, sorted, answered.</h2>
           <p class="sec-sub">Leave, attendance corrections, payslip questions, training. Everything lands in one place and gets a clear answer. Click through one.</p>
         </div>
         <div class="win-wrap">
           <div class="window">
-            <div class="win-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="mono-label">HR inbox · requests</span></div>
+            <div class="win-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="win-title">HR inbox · requests · live</span><span class="win-live"><i></i>Reading requests</span></div>
             <div class="inbox" data-inbox>
               <ul class="inbox-list"></ul>
               <div class="inbox-pane">
-                <div class="pane-head"><div><div class="pane-name"></div><div class="pane-meta"></div></div><button class="mono-link" type="button" data-inbox-next>Next →</button></div>
+                <div class="pane-head"><div><div class="pane-name"></div><div class="pane-meta"></div></div><button class="pane-next" type="button" data-inbox-next>Next →</button></div>
                 <div class="thread"></div>
+                <div class="pane-stats">
+                  <div><b data-countup="4">4</b><p class="kicker">Request types</p></div>
+                  <div><b data-countup="1">1</b><p class="kicker">Inbox</p></div>
+                  <div><b data-countup="30">30</b><p class="kicker">People</p></div>
+                  <div><b data-countup="12">12</b><p class="kicker">MEPPS reviews · year</p></div>
+                </div>
               </div>
-            </div>
-            <div class="inbox-stats">
-              <div><b>4</b><span class="mono-label">request types</span></div>
-              <div><b>1</b><span class="mono-label">inbox</span></div>
-              <div><b>30</b><span class="mono-label">people</span></div>
-              <div><b>Monthly</b><span class="mono-label">MEPPS review</span></div>
             </div>
           </div>
           <p class="footnote">Illustrative conversation. Names are placeholders.</p>
@@ -297,24 +300,25 @@
     <section id="contact">
       <footer class="site-footer">
         <div class="foot-cta">
-          <h2 class="giant" data-split>Tell me what needs fixing.</h2>
+          <h2 class="giant">Tell me what needs fixing.</h2>
           <p class="sec-sub">One email. I'll come back with how I'd approach it, for your people or your projects.</p>
           <div class="btn-row">
-            <a class="btn btn-accent" href="mailto:rownokrah26@gmail.com"><span class="shine"></span><span>Email me</span><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-accent" href="mailto:rownokrah26@gmail.com"><span class="shine"></span><span>Email me</span><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
             <button class="btn btn-outline" type="button" data-copy="rownokrah26@gmail.com"><span class="shine"></span><span class="lbl">Copy email</span></button>
           </div>
         </div>
         <div class="foot-mq">
           <div class="marquee" style="--duration:40s;--gap:12px" data-words-marquee="Recruitment|Onboarding|Attendance|MEPPS|Performance|Training|Employee relations|Client delivery"></div>
         </div>
-        <div class="foot-cols">
-          <div><p class="kicker">Work</p><a href="#people">People</a><a href="#system">MEPPS</a><a href="#layers">How I run HR</a><a href="#delivery">Delivery</a><a href="#hiring">Hiring</a></div>
-          <div><p class="kicker">Skills</p><span>HR &amp; recruitment</span><span>Performance &amp; MEPPS</span><span>Project delivery</span><span>CRM &amp; automation</span><span>Bangla · English</span></div>
-          <div><p class="kicker">Tools</p><span>LofiHRM</span><span>GoHighLevel</span><span>ClickUp · ProofHub</span><span>Google Workspace</span><span>Slack · Discord</span></div>
-          <div><p class="kicker">Education</p><span>MBA, HRM · 2023</span><span>BBA, HRM · 2022</span><span>Port City International University</span></div>
-          <div><p class="kicker">Contact</p><a class="accent" href="mailto:rownokrah26@gmail.com">rownokrah26@gmail.com</a><a href="Rownok-Rahman-CV.pdf" download>Download CV</a><span>Chittagong, Bangladesh</span></div>
+        <div class="foot-bottom">
+          <div class="foot-cols">
+            <div><p class="foot-h">Work</p><ul><li><a class="lh" href="#people">People</a></li><li><a class="lh" href="#system">MEPPS</a></li><li><a class="lh" href="#layers">How I run HR</a></li><li><a class="lh" href="#delivery">Delivery</a></li><li><a class="lh" href="#hiring">Hiring</a></li></ul></div>
+            <div><p class="foot-h">Skills</p><ul><li>HR &amp; recruitment</li><li>Performance &amp; MEPPS</li><li>Project delivery</li><li>CRM &amp; automation</li><li>MBA &amp; BBA, HRM</li></ul></div>
+            <div><p class="foot-h">Tools</p><ul><li>LofiHRM</li><li>GoHighLevel</li><li>ClickUp · ProofHub</li><li>Google Workspace</li><li>Slack · Discord</li></ul></div>
+            <div><p class="foot-h">Contact</p><ul><li><a class="foot-accent" href="mailto:rownokrah26@gmail.com">rownokrah26@gmail.com</a></li><li><a class="lh" href="Rownok-Rahman-CV.pdf" download>Download CV</a></li><li>Chittagong, Bangladesh</li><li>Bangla · English</li></ul></div>
+          </div>
+          <div class="foot-base"><span class="wordmark">ROWNOK<i></i>RAHMAN</span><span>HR Manager &amp; Project Manager · LofiStack · Chittagong, Bangladesh</span><span>© <span data-year>2026</span></span></div>
         </div>
-        <div class="foot-base"><span class="wordmark">ROWNOK<i></i>RAHMAN</span><span class="mono-label">© <span data-year>2026</span> · HR Manager &amp; Project Manager · LofiStack</span></div>
       </footer>
     </section>
   </main>
@@ -322,30 +326,30 @@
   <!-- Dock -->
   <nav class="dock-wrap" aria-label="Sections">
     <div class="glass-dock" data-dock>
-      <a href="#top" data-label="Rownok Rahman" class="dk"><span class="dk-in"><span class="rr-mark sm">RR</span></span></a>
-      <a href="#people" data-label="People" class="dk"><span class="dk-in"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></a>
+      <div class="dk-tip" aria-hidden="true"><div class="dk-tip-box"><div class="dk-tip-track"></div></div></div>
+      <a href="#top" data-label="Rownok Rahman" class="dk"><span class="dk-in"><span class="dk-logo"></span></span></a>
+      <a href="#people" data-label="People" class="dk" data-narrow-hide><span class="dk-in"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></a>
       <a href="#system" data-label="MEPPS system" class="dk"><span class="dk-in"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span></a>
-      <a href="#delivery" data-label="Delivery" class="dk"><span class="dk-in"><svg viewBox="0 0 24 24"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85M7 16.5l5-3M7 16.5v5.17M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3M17 16.5l4.74-2.85M17 16.5v5.17M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15M12 8l4.74-2.85M12 13.5V8"/></svg></span></a>
+      <a href="#delivery" data-label="Delivery" class="dk" data-narrow-hide><span class="dk-in"><svg viewBox="0 0 24 24"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85M7 16.5l5-3M7 16.5v5.17M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3M17 16.5l4.74-2.85M17 16.5v5.17M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15M12 8l4.74-2.85M12 13.5V8"/></svg></span></a>
       <a href="#hiring" data-label="Hiring" class="dk"><span class="dk-in"><svg viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></span></a>
-      <a href="#contact" data-label="Email me" class="dk"><span class="dk-in"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span></a>
-      <button type="button" data-label="Light mode" class="dk" data-theme-toggle><span class="dk-in"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <a href="#contact" data-label="Email me" class="dk"><span class="dk-in"><svg viewBox="0 0 24 24"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/></svg></span></a>
+      <button type="button" data-label="Light mode" class="dk" data-theme-toggle><span class="dk-in"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></span></button>
     </div>
   </nav>
 
-  <!-- Detail modal (rows, rack and marquee cards open here) -->
-  <div class="modal" data-modal hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="round-btn modal-x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-      <div class="modal-shot"></div>
-      <div class="modal-body">
-        <p class="kicker modal-kick"></p>
-        <h3 class="h3" id="modal-title"></h3>
-        <ul class="modal-list"></ul>
+  <!-- Preview overlay (rack, list and marquee cards open here) -->
+  <div class="pv" data-modal hidden role="dialog" aria-modal="true" aria-labelledby="pv-title">
+    <div class="pv-top">
+      <div class="pv-meta"><p class="pv-kick">Preview · <span data-pv-dev>Desktop</span></p><p class="pv-title" id="pv-title"></p></div>
+      <div class="pv-tabs" role="tablist" aria-label="Device">
+        <button type="button" role="tab" data-dev="desktop" aria-label="Desktop"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+        <button type="button" role="tab" data-dev="tablet" aria-label="Tablet"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 18h.01"/></svg></button>
+        <button type="button" role="tab" data-dev="mobile" aria-label="Phone"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></button>
       </div>
+      <div class="pv-actions"><button class="pv-btn modal-x" type="button" data-close aria-label="Close preview"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
     </div>
+    <div class="pv-stage"><div class="pv-box"></div></div>
   </div>
-  <div class="hover-preview" aria-hidden="true"></div>
 
   <script src="app.js" defer></script>
   <script type="module" src="wave.js"></script>
