@@ -246,8 +246,9 @@
     pvBox.innerHTML =
       `<div class="pv-frame${dev ? " device" : ""}" style="width:${W}px;height:${H}px;transform:scale(${b})">` +
       (dev ? "" : `<div class="pv-chrome"><i></i><i></i><i></i><span class="pv-url">rownok-hr-ls.github.io/${esc(key)}</span></div>`) +
-      `<div class="pv-page" style="width:${f.w}px;height:${f.h}px"><div class="pv-scroll"><div class="pv-hero">${shot(mock || key)}</div>` +
-      `<div class="pv-info"><div><p class="modal-kick">${esc(d.kick)}</p><h3>${esc(d.title)}</h3><ul>${d.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div></div></div></div></div>`;
+      `<div class="pv-page" style="width:${f.w}px;height:${f.h}px"><div class="pv-scroll"><div class="pv-body ${pvDev}">` +
+      `<div class="pv-shot">${shot(mock || key)}</div>` +
+      `<div class="pv-info"><p class="modal-kick">${esc(d.kick)}</p><h3>${esc(d.title)}</h3><ul>${d.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div></div></div></div></div>`;
   }
   function pvEnter() {
     const draw = () => { pvBox.style.opacity = clamp(o.x, 0, 1); pvBox.style.transform = `translateY(${y.x}px) scale(${s.x})`; };

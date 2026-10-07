@@ -606,12 +606,25 @@ html:not(.dark) .dk .sun { display: none; } html:not(.dark) .dk .moon { display:
 .pv-url { margin-left: 12px; flex: 1; height: 28px; border-radius: 10px; background: rgb(255 255 255 / .1); padding: 0 12px; display: flex; align-items: center; font: 12px var(--font-mono); color: rgb(255 255 255 / .7); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .pv-page { position: relative; background: #fff; }
 .pv-scroll { position: absolute; inset: 0; overflow: auto; background: #F4F1FA; }
-.pv-hero { aspect-ratio: 800 / 351; }
-.pv-hero .shot { border: 0; border-radius: 0; }
-.pv-info { padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; color: #16102A; }
-.pv-info .modal-kick { font: 400 10px var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: #351366; }
-.pv-info h3 { font: 600 24px/1.2 var(--font-display); letter-spacing: -.025em; margin: 6px 0 10px; }
-.pv-info ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; max-width: 64ch; color: #5E5878; }
+
+
+/* Preview page: the mock keeps its own 16:10 shape (never squeezed); details beside or below it */
+.pv-body { min-height: 100%; display: grid; gap: 28px; align-content: center; padding: 40px; color: #16102A; }
+.pv-body.desktop { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: center; gap: 40px; padding: 48px 56px; }
+.pv-body.mobile { padding: 24px 20px; gap: 20px; align-content: start; }
+.pv-shot { aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; border: 1px solid #35136624; box-shadow: 0 30px 60px -30px rgb(22 16 42 / .45); }
+.pv-shot .shot { border: 0; border-radius: 0; }
+.pv-shot .mk-bar i { display: none; }          /* the browser bar above already has the window dots */
+.pv-info { min-width: 0; }
+.pv-info .modal-kick { font: 400 11px/1.5 var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: #351366; }
+.pv-info h3 { font: 600 30px/1.15 var(--font-display); letter-spacing: -.025em; margin: 8px 0 14px; color: #16102A; }
+.pv-body.mobile .pv-info h3 { font-size: 24px; }
+.pv-info ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 16px; line-height: 1.5; color: #5E5878; }
+.pv-body.mobile .pv-info ul { font-size: 15px; }
+.pv-info li::marker { color: #351366; }
+
+/* Wide thumbnails (screenshot-shaped frames): lay the mock out at 16:10 and crop from the top, like a screenshot */
+.rack-card .shot .mk, .mq-card .shot .mk, .tl-preview .shot .mk, .sc-card .shot .mk, .hs-right .wide .shot .mk { bottom: auto; aspect-ratio: 16 / 10; }
 
 /* Scroll reveal */
 .motion .rv { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
